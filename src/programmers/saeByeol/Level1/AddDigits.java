@@ -15,8 +15,8 @@ public class AddDigits {
         int a = 10;
         int answer = 0;
         while (n > 0) {
-            answer += n % a;
-            n = (n - (n % a)) / a;
+            answer += n % a;        // a 자리에 그냥 10 넣어도 처리 가능
+            n = (n - (n % a)) / a;  // n /= 10 으로 간단하게 처리 가능
         }
         return answer;
     }
