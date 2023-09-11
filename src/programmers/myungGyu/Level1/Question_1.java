@@ -1,4 +1,4 @@
-package programmers;
+package programmers.myungGyu.Level1;
 
 public class Question_1
 {
