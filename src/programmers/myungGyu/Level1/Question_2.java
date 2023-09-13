@@ -1,5 +1,15 @@
 package programmers.myungGyu.Level1;
 
+/**
+ * 약수의 합
+ *
+ * 문제 설명
+ * 정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.
+ *
+ * 제한사항
+ * n은 0 이상 3000이하인 정수입니다.
+ */
+
 public class Question_2 {
 
     //나머지 값이 없는 정수들을 뽑아서 더하기
