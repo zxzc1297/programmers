@@ -10,7 +10,7 @@ package programmers.saeByeol.Level1;
  * 제한사항
  * N의 범위 : 100,000,000 이하의 자연수
  */
-public class AddDigits {
+public class AddDigits_1 {
     public int solution(int n) {
         int a = 10;
         int answer = 0;
@@ -22,8 +22,8 @@ public class AddDigits {
     }
 
     public static void main(String[] args) {
-        AddDigits addDigits = new AddDigits();
-        int solution = addDigits.solution(123);
+        AddDigits_1 addDigits1 = new AddDigits_1();
+        int solution = addDigits1.solution(123);
         System.out.println("solution = " + solution);
     }
 }

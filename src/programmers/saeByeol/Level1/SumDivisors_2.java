@@ -9,7 +9,7 @@ package programmers.saeByeol.Level1;
  * 제한사항
  * n은 0 이상 3000이하인 정수입니다.
  */
-public class SumDivisors {
+public class SumDivisors_2 {
     public int solution(int n) {
         int answer = 0;
         for (int i = 1; i <= n; i++) {
@@ -22,8 +22,8 @@ public class SumDivisors {
     }
 
     public static void main(String[] args) {
-        SumDivisors sumDivisors = new SumDivisors();
-        int solution = sumDivisors.solution(5);
+        SumDivisors_2 sumDivisors2 = new SumDivisors_2();
+        int solution = sumDivisors2.solution(5);
         System.out.println("solution = " + solution);
     }
 }

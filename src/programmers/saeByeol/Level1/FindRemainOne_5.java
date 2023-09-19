@@ -8,7 +8,7 @@ package programmers.saeByeol.Level1;
  * 제한사항
  * 3 ≤ n ≤ 1,000,000
  */
-public class FindRemainOne {
+public class FindRemainOne_5 {
     public int solution(int n) {
         int answer = 1;
         while (n % answer != 1) {
@@ -18,8 +18,8 @@ public class FindRemainOne {
     }
 
     public static void main(String[] args) {
-        FindRemainOne findRemainOne = new FindRemainOne();
-        int solution = findRemainOne.solution(12);
+        FindRemainOne_5 findRemainOne5 = new FindRemainOne_5();
+        int solution = findRemainOne5.solution(12);
         System.out.println("solution = " + solution);
     }
 

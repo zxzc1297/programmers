@@ -15,7 +15,7 @@ package programmers.saeByeol.Level1;
  * 문자열 s의 길이 : 50 이하의 자연수
  * 문자열 s는 알파벳으로만 이루어져 있습니다.
  */
-public class CountPAndY {
+public class CountPAndY_9 {
     boolean solution(String str) {
         str = str.toUpperCase();
         int pCnt = 0;
@@ -31,8 +31,8 @@ public class CountPAndY {
     }
 
     public static void main(String[] args) {
-        CountPAndY countPAndY = new CountPAndY();
-        boolean pPoooyY = countPAndY.solution("Pyy");
+        CountPAndY_9 countPAndY9 = new CountPAndY_9();
+        boolean pPoooyY = countPAndY9.solution("Pyy");
         System.out.println("pPoooyY = " + pPoooyY);
     }
 }

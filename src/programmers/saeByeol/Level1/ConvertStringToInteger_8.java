@@ -11,14 +11,14 @@ package programmers.saeByeol.Level1;
  * s는 부호와 숫자로만 이루어져있습니다.
  * s는 "0"으로 시작하지 않습니다.
  */
-public class ConvertStringToInteger {
+public class ConvertStringToInteger_8 {
     public int solution(String s) {
         return Integer.parseInt(s);
     }
 
     public static void main(String[] args) {
-        ConvertStringToInteger convertStringToInteger = new ConvertStringToInteger();
-        int solution = convertStringToInteger.getStrToInt("-1234");
+        ConvertStringToInteger_8 convertStringToInteger8 = new ConvertStringToInteger_8();
+        int solution = convertStringToInteger8.getStrToInt("-1234");
         System.out.println("solution = " + solution);
     }
 

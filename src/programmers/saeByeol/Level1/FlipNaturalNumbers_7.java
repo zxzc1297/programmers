@@ -9,21 +9,20 @@ package programmers.saeByeol.Level1;
  * 제한 조건
  * n은 10,000,000,000이하인 자연수입니다.
  */
-public class FlipNaturalNumbers {
+public class FlipNaturalNumbers_7 {
     public int[] solution(long n) {
-        int s = Long.valueOf(n).intValue();
-        String m = Integer.toString(s);
-        int m_len = m.length();
-        int[] answer = new int[m_len];
-        for(int i = 1; i <= m_len; i++){
-            answer[i-1] = Integer.parseInt(m.substring(m.length() - i, m.length() - i + 1));
+        String nString = n + "";
+        int[] answer = new int[nString.length()];
+        String[] split = nString.split("");
+        for (int i = 0; i < nString.length(); i++) {
+            answer[i] = Integer.parseInt(split[nString.length() - i - 1]);
         }
         return answer;
     }
 
     public static void main(String[] args) {
-        FlipNaturalNumbers flipNaturalNumbers = new FlipNaturalNumbers();
-        int[] solution = flipNaturalNumbers.solution(12345);
+        FlipNaturalNumbers_7 flipNaturalNumbers7 = new FlipNaturalNumbers_7();
+        int[] solution = flipNaturalNumbers7.solution(12345);
         for (int i : solution) {
             System.out.println("i = " + i);
         }

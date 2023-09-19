@@ -10,15 +10,15 @@ package programmers.saeByeol.Level1;
  * num은 int 범위의 정수입니다.
  * 0은 짝수입니다.
  */
-public class EvenOdd {
+public class EvenOdd_3 {
 
     public String solution(int num) {
         return num % 2 == 0 ? "Even" : "Odd";
     }
 
     public static void main(String[] args) {
-        EvenOdd evenOdd = new EvenOdd();
-        String solution = evenOdd.solution(3);
+        EvenOdd_3 evenOdd3 = new EvenOdd_3();
+        String solution = evenOdd3.solution(3);
         System.out.println("solution = " + solution);
     }
 }
