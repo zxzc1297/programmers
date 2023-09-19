@@ -11,18 +11,19 @@ package programmers.saeByeol.Level1;
  */
 public class FlipNaturalNumbers {
     public int[] solution(long n) {
-        String nString = n + "";
-        int[] answer = new int[nString.length()];
-        String[] split = nString.split("");
-        for (int i = 0; i < nString.length(); i++) {
-            answer[i] = Integer.parseInt(split[nString.length() - i - 1]);
+        int s = Long.valueOf(n).intValue();
+        String m = Integer.toString(s);
+        int m_len = m.length();
+        int[] answer = new int[m_len];
+        for(int i = 1; i <= m_len; i++){
+            answer[i-1] = Integer.parseInt(m.substring(m.length() - i, m.length() - i + 1));
         }
         return answer;
     }
 
     public static void main(String[] args) {
         FlipNaturalNumbers flipNaturalNumbers = new FlipNaturalNumbers();
-        int[] solution = flipNaturalNumbers.solution(1000);
+        int[] solution = flipNaturalNumbers.solution(12345);
         for (int i : solution) {
             System.out.println("i = " + i);
         }
