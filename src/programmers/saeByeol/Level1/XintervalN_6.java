@@ -11,7 +11,7 @@ package programmers.saeByeol.Level1;
  * x는 -10000000 이상, 10000000 이하인 정수입니다.
  * n은 1000 이하인 자연수입니다.
  */
-public class XintervalN {
+public class XintervalN_6 {
     /**
      * 첫번째 시도
      * @param x
@@ -31,8 +31,8 @@ public class XintervalN {
     }
 
     public static void main(String[] args) {
-        XintervalN xintervalN = new XintervalN();
-        long[] solution = xintervalN.solution(-4, 2);
+        XintervalN_6 xintervalN6 = new XintervalN_6();
+        long[] solution = xintervalN6.solution(-4, 2);
         for (long l : solution) {
             System.out.println("l = " + l);
         }
