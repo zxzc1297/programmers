@@ -21,6 +21,8 @@ public class Solution27 {
             }
         }catch(Exception e){
             return false;
+            // 위에는 프로세스가 간단해서 괜찮은데 복잡한 프로세스일 경우 이렇게 잡으면 모든 예외가 여기서 다 잡히니까
+            // 특별한 의도가 있으면 Exception 말고 특정 예외 (여기선 NumberFormatException) 를 넣는게 더 좋다고 생각 ^0^~
         }
         return answer;
     }
