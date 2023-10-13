@@ -27,10 +27,4 @@ public class Question35 {
         }
         return answer;
     }
-
-    public static void main(String[] args) {
-        Question35 question35 = new Question35();
-        int solution = question35.solution("2456347573134", "271");
-        System.out.println("solution = " + solution);
-    }
 }
