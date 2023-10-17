@@ -46,6 +46,10 @@ public class Question40 {
         String[] result = new String[n];
         for (int i = 0; i < n; i++) {
             result[i] = Integer.toBinaryString(arr1[i] | arr2[i]);
+            // toBinaryString : 어떤 숫자를 2진수 문자열로 바꿔주는 함수입니다.
+            // String temp = Integer.toBinaryString(9 | 30);
+            // 우선 9는 01001, 30은 11110입니다. 이 두 2진수를 비트 연산자를 사용해서 무언가 값을 구하고 싶다면 위의 코드처럼 사용하면 됩니다. 물론 &도 가능합니다.
+            //위의 코드는 결국 11111이 됩니다. &로는 01000입니다.
         }
 
         for (int i = 0; i < n; i++) {
