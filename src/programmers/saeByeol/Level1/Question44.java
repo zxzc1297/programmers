@@ -13,7 +13,6 @@ import java.util.*;
 public class Question44 {
     public int[] solution(int[] numbers) {
         HashSet<Integer> set = new HashSet<>();     //HashSet 이 아닌 TreeSet 을 사용하면 add 하면서 정렬 가능
-        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < numbers.length - 1; i++) {
             for (int j = 1; j < numbers.length; j++) {
                 if (i != j) {
