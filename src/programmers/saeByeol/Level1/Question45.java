@@ -33,15 +33,12 @@ public class Question45 {
                 answer += i;
             }
         }
-        answer += "0";
         String reverseAnswer = "";
         char[] arr = answer.toCharArray();
         for (char a : arr) {
-            if (a != '0') {
                 reverseAnswer = a + reverseAnswer;
-            }
         }
-        return answer + reverseAnswer;
+        return answer + "0" + reverseAnswer;
     }
 
     public String solution2 (int[] food) {
