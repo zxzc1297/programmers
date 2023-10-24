@@ -31,6 +31,9 @@ public class Solution50 {
         return days[sumDay%7];
     }
 
+    /**
+     * 다른 사람 풀이
+     */
     public String getDayName(int month, int day)
     {
         Calendar cal = new Calendar.Builder().setCalendarType("iso8601")
