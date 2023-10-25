@@ -1,38 +1,38 @@
 package programmers.saeByeol.Level1;
-
+import java.util.*;
 /**
- *카드 뭉치
+ * 명예의 전당 (1)
  * 문제 설명
- * 코니는 영어 단어가 적힌 카드 뭉치 두 개를 선물로 받았습니다.
- * 코니는 다음과 같은 규칙으로 카드에 적힌 단어들을 사용해 원하는 순서의 단어 배열을 만들 수 있는지 알고 싶습니다.
+ * "명예의 전당"이라는 TV 프로그램에서는 매일 1명의 가수가 노래를 부르고, 시청자들의 문자 투표수로 가수에게 점수를 부여합니다.
+ * 매일 출연한 가수의 점수가 지금까지 출연 가수들의 점수 중 상위 k번째 이내이면 해당 가수의 점수를 명예의 전당이라는 목록에 올려 기념합니다.
+ * 즉 프로그램 시작 이후 초기에 k일까지는 모든 출연 가수의 점수가 명예의 전당에 오르게 됩니다.
+ * k일 다음부터는 출연 가수의 점수가 기존의 명예의 전당 목록의 k번째 순위의 가수 점수보다 더 높으면,
+ * 출연 가수의 점수가 명예의 전당에 오르게 되고 기존의 k번째 순위의 점수는 명예의 전당에서 내려오게 됩니다.
  *
- * 원하는 카드 뭉치에서 카드를 순서대로 한 장씩 사용합니다.
- * 한 번 사용한 카드는 다시 사용할 수 없습니다.
- * 카드를 사용하지 않고 다음 카드로 넘어갈 수 없습니다.
- * 기존에 주어진 카드 뭉치의 단어 순서는 바꿀 수 없습니다.
- * 예를 들어 첫 번째 카드 뭉치에 순서대로 ["i", "drink", "water"],
- * 두 번째 카드 뭉치에 순서대로 ["want", "to"]가 적혀있을 때
- * ["i", "want", "to", "drink", "water"] 순서의 단어 배열을 만들려고 한다면 첫 번째 카드 뭉치에서 "i"를 사용한 후 두 번째 카드 뭉치에서
- * "want"와 "to"를 사용하고 첫 번째 카드뭉치에 "drink"와 "water"를 차례대로 사용하면 원하는 순서의 단어 배열을 만들 수 있습니다.
+ * 이 프로그램에서는 매일 "명예의 전당"의 최하위 점수를 발표합니다.
+ * 예를 들어, k = 3이고, 7일 동안 진행된 가수의 점수가 [10, 100, 20, 150, 1, 100, 200]이라면,
+ * 명예의 전당에서 발표된 점수는 아래의 그림과 같이 [10, 10, 10, 20, 20, 100, 100]입니다.
  *
- * 문자열로 이루어진 배열 cards1, cards2와 원하는 단어 배열 goal이 매개변수로 주어질 때,
- * cards1과 cards2에 적힌 단어들로 goal를 만들 있다면 "Yes"를, 만들 수 없다면 "No"를 return하는 solution 함수를 완성해주세요.
+ * 그림1.png
+ *
+ * 명예의 전당 목록의 점수의 개수 k, 1일부터 마지막 날까지 출연한 가수들의 점수인 score가 주어졌을 때,
+ * 매일 발표된 명예의 전당의 최하위 점수를 return하는 solution 함수를 완성해주세요.
  */
 public class Question48 {
-    public String solution(String[] cards1, String[] cards2, String[] goal) {
-        int idx1 = 0;
-        int idx2 = 0;
-
-        for (String currentStr : goal) {
-            if (idx1 < cards1.length && currentStr.equals(cards1[idx1])) {
-                idx1++; // cards1[idx1]에 포함하는 경우 idx1 증가
-            } else if (idx2 < cards2.length && currentStr.equals(cards2[idx2])) {
-                idx2++; // cards2[idx2]에 포함하는 경우 idx2 증가
-            } else {
-                return "No"; // 둘 다 포함하지 않는 경우
+    public int[] solution(int k, int[] score) {
+        int[] answer = new int[score.length];
+        List<Integer> list = new ArrayList();
+        for (int i = 0; i < score.length; i++) {
+            if (i < k-1){
+                list.add(score[i]);
+                list.sort(Collections.reverseOrder());
+                answer[i]=list.get(list.size()-1);
+            } else if (i >= k-1){
+                list.add(score[i]);
+                list.sort(Collections.reverseOrder());
+                answer[i]=list.get(k-1);
             }
         }
-
-        return "Yes";
+        return answer;
     }
 }
