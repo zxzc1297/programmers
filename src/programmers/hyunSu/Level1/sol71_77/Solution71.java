@@ -24,23 +24,59 @@ import java.util.Arrays;
  * ingredient의 원소는 1, 2, 3 중 하나의 값이며, 순서대로 빵, 야채, 고기를 의미합니다.
  */
 public class Solution71 {
-
+    // 시간초과 풀이... 못풀었음...
     public int solution(int[] ingredient) {
         int answer = 0;
         int preCnt = -1;
         int cnt = 0;
         int chgLength = 0;
         int curLength = 0;
-        String ingredients = Arrays.toString(ingredient);
+        String ingredients = "";
+        for(int ing : ingredient)
+            ingredients += String.valueOf(ing);
 
         while(cnt != preCnt){
             curLength = ingredients.length();
-            ingredients = ingredients.replaceAll("1, 2, 3, 1", "");
+            ingredients = ingredients.replaceFirst("1231", "");
             chgLength = ingredients.length();
             preCnt = cnt;
             cnt += (curLength - chgLength) / 10;
+            ingredients = ingredients.replaceAll("", "");
         }
 
         return cnt;
+    }
+
+    /**
+     * 다른 사람 풀이
+     */
+    public int solution2(int[] ingredient) {
+        int answer = 0;
+        StringBuilder sb = new StringBuilder();
+        for (int j : ingredient) {
+            sb.append(j);
+            if (sb.length() > 3 && sb.subSequence(sb.length() - 4, sb.length()).equals("1231")) {
+                answer++;
+                sb.delete(sb.length() - 4, sb.length());
+            }
+        }
+        return answer;
+    }
+
+    public int solution3(int[] ingredient) {
+        int[] stack = new int[ingredient.length];
+        int sp = 0;
+        int answer = 0;
+        for (int i : ingredient) {
+            stack[sp++] = i;
+            if (sp >= 4 && stack[sp - 1] == 1
+                    && stack[sp - 2] == 3
+                    && stack[sp - 3] == 2
+                    && stack[sp - 4] == 1) {
+                sp -= 4;
+                answer++;
+            }
+        }
+        return answer;
     }
 }
