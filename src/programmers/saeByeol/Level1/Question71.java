@@ -22,34 +22,32 @@ import java.util.*;
  * ingredient의 원소는 1, 2, 3 중 하나의 값이며, 순서대로 빵, 야채, 고기를 의미합니다.
  */
 public class Question71 {
-    public int solution(int[] ingredients) {
+    public int solution(int[] ingredient) {
         int answer = 0;
-        int[] burger = {1, 2, 3, 1};
-        List<Integer> list = new ArrayList<>();
-        List<Integer> removeList = new ArrayList<>();
-        for (int ingredient : ingredients) {
-            list.add(ingredient);
-        }
-        int listSize = list.size();
         int index = 0;
-        while (listSize != index) {
-            for (int j = 0; j < burger.length; j++) {
-                if (list.get(index) == burger[j]) {
-                    //1,2,3,1 이 맞다면
-                    //remove 해주고 다시 처음부터 돌아가기
-                    removeList.add(index);
-                    if (removeList.size() == 4) {
-                        for (int k = 0; k < removeList.size(); k++) {
-                            list.remove(removeList.get(k));
-                        }
-                        index = 0;
-                    }
-                } else {
-                    index++;
-                    break;
-                }
+        List<Integer> list = new ArrayList<>();
+        for (int i : ingredient) {
+            list.add(i);
+            index++;
+            while (list.size() > 3) {
+                if (list.get(index - 4) == 1 && list.get(index - 3) == 2
+                        && list.get(index - 2) == 3 && list.get(index - 1) == 1) {
+                    list.remove(index - 1);
+                    list.remove(index - 2);
+                    list.remove(index - 3);
+                    list.remove(index - 4);
+                    answer++;
+                    index = list.size();
+                } else break;
             }
         }
         return answer;
+    }
+
+    public static void main(String[] args) {
+        Question71 question71 = new Question71();
+        int[] ingredient = {2, 1, 1, 2, 3, 1, 2, 3, 1};
+        int solution = question71.solution(ingredient);
+        System.out.println("solution = " + solution);
     }
 }
