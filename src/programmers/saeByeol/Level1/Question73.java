@@ -45,26 +45,48 @@ package programmers.saeByeol.Level1;
 public class Question73 {
     public int[] solution(String[] wallpaper) {
         int[] answer = new int[4];
-        String a = "abb";
-        System.out.println(a.indexOf("c"));
-        for (int i = 0; i < wallpaper.length - 1; i++) {
+        for (int i = 0; i < wallpaper.length; i++) {
             if (wallpaper[i].indexOf("#") != -1) {
                 answer[0] = i;
-                if (wallpaper[i].indexOf("#") < wallpaper[i + 1].indexOf("#")) {
-                    answer[1] = wallpaper[i].indexOf("#");
-                    break;
-                }
+                answer[1] = wallpaper[i].indexOf("#");
+                break;
+            }
+        }
+        for (int i = 0; i < wallpaper.length; i++) {
+            if (wallpaper[i].indexOf("#") != -1) {
+                if (answer[1] > wallpaper[i].indexOf("#")) answer[1] = wallpaper[i].indexOf("#");
             }
         }
         for (int i = wallpaper.length - 1; i >= 0; i--) {
-            if (wallpaper[i].indexOf("#") != -1) {
-                answer[3] = i;
-                if (wallpaper[i].indexOf("#") > wallpaper[i + 1].indexOf("#")) {
-                    answer[2] = wallpaper[i].indexOf("#");
-                    break;
-                }
+            if (wallpaper[i].lastIndexOf("#") != -1) {
+                answer[2] = i + 1;
+                answer[3] = wallpaper[i].lastIndexOf("#") + 1;
+                break;
+            }
+        }
+        for (int i = wallpaper.length - 1; i >= 0; i--) {
+            if (wallpaper[i].lastIndexOf("#") != -1) {
+                if (answer[3] < wallpaper[i].lastIndexOf("#") + 1) answer[3] = wallpaper[i].lastIndexOf("#") + 1;
             }
         }
         return answer;
+    }
+
+    public int[] solution2(String[] wallpaper) {
+        int minX = Integer.MAX_VALUE;
+        int minY = Integer.MAX_VALUE;
+        int maxX = Integer.MIN_VALUE;
+        int maxY = Integer.MIN_VALUE;
+        for(int i=0; i< wallpaper.length;i++ ){
+            for(int j=0; j<wallpaper[i].length();j++){
+                if(wallpaper[i].charAt(j)=='#'){
+                    minX = Math.min(minX,i);
+                    minY = Math.min(minY,j);
+                    maxX = Math.max(maxX,i);
+                    maxY = Math.max(maxY,j);
+                }
+            }
+        }
+        return new int[]{minX,minY,maxX+1,maxY+1};
     }
 }
