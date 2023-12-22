@@ -26,6 +26,25 @@ public class Question25 {
         return answer;
     }
 
+    // 재시도 풀이
+    public String solutionAgain(String s) {
+        String answer = "";
+        char[] arr = s.toCharArray();
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    char temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for (char a : arr) {
+            answer += a;
+        }
+        return answer;
+    }
+
     public static void main(String[] args) {
         Question25 question25 = new Question25();
         String zbcdefg = question25.solution("Zbcdefg");
