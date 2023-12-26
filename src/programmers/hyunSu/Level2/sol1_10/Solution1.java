@@ -1,4 +1,4 @@
-package programmers.hyunSu.Level2;
+package programmers.hyunSu.Level2.sol1_10;
 
 import java.util.Arrays;
 
