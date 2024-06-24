@@ -3,7 +3,6 @@ package programmers.hyunSu.Etc;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 
 /**
  * 문제 설명
@@ -42,7 +41,7 @@ import java.util.Stack;
  *
  * ※ 공지 - 2020년 7월 14일 테스트케이스가 추가되었습니다.
  */
-public class Stack1 {
+public class Stack_Queue1 {
     public int[] solution(int[] progresses, int[] speeds) {
         ArrayList<Integer> result = new ArrayList<>();
         Queue<Integer> Q = new LinkedList<>();
