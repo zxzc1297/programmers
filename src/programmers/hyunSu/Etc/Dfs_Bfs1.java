@@ -31,7 +31,7 @@ import java.util.*;
  * +4-1+2-1 = 4
  * 총 2가지 방법이 있으므로, 2를 return 합니다.
  */
-public class Dfs1 {
+public class Dfs_Bfs1 {
     int[] nums;
     ArrayList<Integer> results = new ArrayList<>();
     int answer, tgt;
